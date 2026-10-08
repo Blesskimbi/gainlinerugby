@@ -13,7 +13,7 @@ export default function Logo({ variant = "wordmark", onDark = true, className = 
   if (variant === "full") {
     return (
       <img
-        src="/images/gainline-logo.png"
+        src="/images/gainline-logo.webp"
         alt={`${brand.name} ${brand.suffix}`}
         width={909}
         height={572}

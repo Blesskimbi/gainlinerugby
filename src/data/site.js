@@ -61,8 +61,8 @@ export const hero = {
     "One-to-one and small-group rugby coaching for ambitious players. Built around your position, your goals and the level you're chasing.",
   primaryCta: { label: "Book a Session", href: "#contact" },
   secondaryCta: { label: "See Session Types", href: "#sessions" },
-  background: "/images/rugby-hero-bg.jpg",
-  action: "/images/rugby-hero-action.jpg",
+  background: "/images/rugby-hero-bg.webp",
+  action: "/images/rugby-hero-action.webp",
   stats: [
     { label: "Players Coached", value: 150 }, // DEMO
     { label: "Years Coaching", value: 8 }, // DEMO
@@ -191,10 +191,10 @@ export const about = {
     name: "Rhys Morgan", // DEMO — not a real person
     role: "Head Coach, GainLine Rugby",
     bio: "Fifteen years in the Welsh club game, eight of them coaching. WRU Level 2 qualified, with a background in age-grade pathway coaching and a specialism in back-row and half-back play.", // DEMO
-    portrait: "/images/rugby-coach.jpg",
+    portrait: "/images/rugby-coach.webp",
   },
   cta: { label: "Book a Session", href: "#contact" },
-  gallery: ["/images/rugby-session-1.jpg", "/images/rugby-session-2.jpg"],
+  gallery: ["/images/rugby-session-1.webp", "/images/rugby-session-2.webp"],
   stat: { label: "Years Coaching", value: 8 }, // DEMO
 };
 
@@ -206,25 +206,25 @@ export const whoWeCoach = {
       title: "Juniors",
       age: "U8 – U12",
       body: "Core skills, confidence and a genuine love of the game. Safe technique first, always.",
-      image: "/images/rugby-juniors.jpg",
+      image: "/images/rugby-juniors.webp",
     },
     {
       title: "Age-Grade",
       age: "U13 – U18",
       body: "The years that decide selection. Position-specific detail, physicality and decision-making under pressure.",
-      image: "/images/rugby-agegrade.jpg",
+      image: "/images/rugby-agegrade.webp",
     },
     {
       title: "Senior & Club",
       age: "18+",
       body: "Sharpen a specific part of your game, or rebuild a skill that has gone stale. Honest coaching, no filler.",
-      image: "/images/rugby-senior.jpg",
+      image: "/images/rugby-senior.webp",
     },
     {
       title: "Position-Specific",
       age: "All ages",
       body: "Front row, half-backs, back three — detailed work on the demands of your actual shirt number.",
-      image: "/images/rugby-position.jpg",
+      image: "/images/rugby-position.webp",
     },
   ],
 };
@@ -233,8 +233,8 @@ export const whyGainLine = {
   eyebrow: "Why GainLine",
   title: "Coaching That Actually Moves the Needle",
   body: "Club training has to serve twenty-five players at once. A GainLine session serves one to four — so every rep is watched, corrected and repeated until it holds up under pressure.",
-  background: "/images/rugby-turf.jpg",
-  image: "/images/rugby-team.jpg",
+  background: "/images/rugby-turf.webp",
+  image: "/images/rugby-team.webp",
   stats: [
     { label: "Players Coached", value: 150 }, // DEMO
     { label: "Sessions Delivered", value: 900 }, // DEMO
@@ -264,7 +264,7 @@ export const whyGainLine = {
 export const testimonials = {
   eyebrow: "Reviews",
   title: "What Players and Parents Say",
-  image: "/images/rugby-testimonial.jpg",
+  image: "/images/rugby-testimonial.webp",
   items: [
     {
       quote:
@@ -294,32 +294,32 @@ export const skills = {
     {
       title: "Contact & Collision",
       body: "Safe, legal, dominant. Body height, leg drive and the confidence to go looking for contact.",
-      image: "/images/skill-contact.jpg",
+      image: "/images/skill-contact.webp",
     },
     {
       title: "The Breakdown",
       body: "Jackal technique, clearout angles and the split-second read on whether to compete or move on.",
-      image: "/images/skill-breakdown.jpg",
+      image: "/images/skill-breakdown.webp",
     },
     {
       title: "Kicking",
       body: "Out of hand and off the tee. Technique, consistency under fatigue, and knowing which kick the picture calls for.",
-      image: "/images/skill-kicking.jpg",
+      image: "/images/skill-kicking.webp",
     },
     {
       title: "Handling & Passing",
       body: "Both hands, off both feet, under pressure. Pass length, accuracy and catching on the move.",
-      image: "/images/skill-passing.jpg",
+      image: "/images/skill-passing.webp",
     },
     {
       title: "Strength & Conditioning",
       body: "Rugby-specific speed, power and the repeat-effort capacity to still be effective on eighty minutes.",
-      image: "/images/skill-conditioning.jpg",
+      image: "/images/skill-conditioning.webp",
     },
     {
       title: "Game Sense",
       body: "Scanning, communication and decision-making. The part of the game that separates good from selected.",
-      image: "/images/skill-gamesense.jpg",
+      image: "/images/skill-gamesense.webp",
     },
   ],
 };
@@ -346,8 +346,8 @@ export const camps = {
   blurb:
     "Holiday camps and multi-week coaching blocks across South Wales. Places are limited and usually go via DM first.",
   cta: { label: "Enquire About a Place", href: "#contact" },
-  background: "/images/rugby-camp-bg.jpg",
-  photo: "/images/rugby-camp.jpg",
+  background: "/images/rugby-camp-bg.webp",
+  photo: "/images/rugby-camp.webp",
   items: [
     {
       name: "Easter Skills Camp",
@@ -387,19 +387,19 @@ export const feed = {
     {
       caption:
         "Clearout angles with the U16s. Low, square, and through the shoulder — not around it.",
-      image: "/images/feed-1.jpg",
+      image: "/images/feed-1.webp",
       href: INSTAGRAM,
     },
     {
       caption:
         "Tee work in the wind at Cwmbrook. Same routine every time, whatever the weather is doing.",
-      image: "/images/feed-2.jpg",
+      image: "/images/feed-2.webp",
       href: INSTAGRAM,
     },
     {
       caption:
         "Full squad block done. Line speed looked a different animal by the end of the six weeks.",
-      image: "/images/feed-3.jpg",
+      image: "/images/feed-3.webp",
       href: INSTAGRAM,
     },
   ],
@@ -412,7 +412,7 @@ export const bookCta = {
     "Tell us your position, your age group and what you want to improve. We'll come back with a plan and available dates.",
   primaryCta: { label: "Message on Instagram", href: INSTAGRAM },
   secondaryCta: { label: "Send an Enquiry", href: "#contact" },
-  background: "/images/rugby-cta-bg.jpg",
+  background: "/images/rugby-cta-bg.webp",
 };
 
 export const contact = {

@@ -47,6 +47,7 @@ export default function Hero() {
             alt="A GainLine coaching session in progress"
             className="mx-auto aspect-[16/9] w-full max-w-4xl object-cover shadow-2xl corner-kick"
             loading="eager"
+            fetchPriority="high"
           />
         </div>
       </Container>
