@@ -52,13 +52,17 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-ink/95 py-3 shadow-2xl ring-1 ring-white/10 backdrop-blur-md"
-          : "bg-linear-to-b from-ink/70 to-transparent py-5"
-      }`}
-    >
+    <>
+      {/* The background is deliberately NOT transitioned. Animating it leaves
+          the bar mid-interpolation — effectively transparent — which hides the
+          white nav and burger against light sections. It snaps instead. */}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-[padding,box-shadow] duration-300 ${
+          scrolled
+            ? "bg-ink py-3 shadow-2xl ring-1 ring-white/10"
+            : "bg-linear-to-b from-ink/80 to-transparent py-5"
+        }`}
+      >
       <Container className="flex items-center justify-between gap-6">
         <a href="#home" className="shrink-0">
           <Logo />
@@ -109,56 +113,62 @@ export default function Header() {
         </button>
       </Container>
 
-      <ScrollProgress />
+        <ScrollProgress />
+      </header>
 
-      {/* Mobile drawer */}
-      <div
-        className={`fixed inset-0 z-50 bg-ink transition-opacity duration-300 lg:hidden ${
-          open ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      >
-        <div className="flex items-center justify-between px-5 py-5">
-          <Logo />
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Close menu"
-            className="text-white transition-colors hover:text-accent"
+      {/* Two deliberate choices here:
+          1. Sibling of <header>, not a child — a filtered or transformed
+             ancestor becomes the containing block for fixed positioning, which
+             would clip this to the header's height.
+          2. Mounted only while open, with no fade. Visibility must never
+             depend on a transition finishing; a stalled one hides the whole
+             mobile menu. */}
+      {open && (
+        <div className="fixed inset-0 z-60 bg-ink lg:hidden">
+          <div className="flex items-center justify-between px-5 py-5">
+            <Logo />
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="text-white transition-colors hover:text-accent"
+            >
+              <Close />
+            </button>
+          </div>
+
+          <nav
+            aria-label="Mobile"
+            className="h-[calc(100vh-5.5rem)] overflow-y-auto px-5 pb-10"
           >
-            <Close />
-          </button>
+            <ul className="divide-y divide-white/10">
+              {nav.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-base font-semibold tracking-wide text-white uppercase transition-colors hover:text-accent"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <SocialLinks size="lg" variant="tile" className="mt-8" />
+
+            <Button
+              href="#contact"
+              variant="accent"
+              className="mt-6 w-full justify-center"
+              onClick={() => setOpen(false)}
+            >
+              Book a Session
+            </Button>
+          </nav>
         </div>
+      )}
 
-        <nav
-          aria-label="Mobile"
-          className="h-[calc(100vh-5.5rem)] overflow-y-auto px-5 pb-10"
-        >
-          <ul className="divide-y divide-white/10">
-            {nav.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-4 text-base font-semibold tracking-wide text-white uppercase transition-colors hover:text-accent"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <SocialLinks size="lg" variant="tile" className="mt-8" />
-
-          <Button
-            href="#contact"
-            variant="accent"
-            className="mt-6 w-full justify-center"
-            onClick={() => setOpen(false)}
-          >
-            Book a Session
-          </Button>
-        </nav>
-      </div>
-    </header>
+    </>
   );
 }
